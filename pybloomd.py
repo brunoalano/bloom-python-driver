@@ -1,13 +1,15 @@
 """
 This module implements a client for the BloomD server.
 """
+from __future__ import unicode_literals
+
 __all__ = ["BloomdError", "BloomdConnection", "BloomdClient", "BloomdFilter"]
 __version__ = "0.4.6"
 import logging
 import socket
 import errno
 import time
-import hashlib
+from hashlib import sha1
 
 # Check for TCP_NODELAY support
 HAS_TCP_NODELAY = hasattr(socket, "TCP_NODELAY")
@@ -335,7 +337,7 @@ class BloomdFilter(object):
         Returns the key we should send to the server
         """
         if self.hash_keys:
-            return hashlib.sha1(key).hexdigest()
+            return sha1(key.encode('utf8')).hexdigest()
         return key
 
     def add(self, key):
@@ -436,7 +438,7 @@ class BloomdPipeline(object):
         Returns the key we should send to the server
         """
         if self.hash_keys:
-            return hashlib.sha1(key).hexdigest()
+            return sha1(key.encode('utf8')).hexdigest()
         return key
 
     def add(self, key):
