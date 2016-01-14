@@ -4,7 +4,7 @@ This module implements a client for the BloomD server.
 from __future__ import unicode_literals
 
 __all__ = ["BloomdError", "BloomdConnection", "BloomdClient", "BloomdFilter"]
-__version__ = "0.4.6"
+__version__ = "0.4.7"
 import logging
 import socket
 import errno
