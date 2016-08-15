@@ -29,7 +29,7 @@ Example
 
 Using pybloom is very simple, and is similar to using native sets::
 
-    from pybloom import BloomdClient
+    from pybloomd.pybloomd import BloomdClient
 
     # Create a client to a local bloomd server, default port
     client = BloomdClient(["localhost"])
@@ -43,7 +43,7 @@ Using pybloom is very simple, and is similar to using native sets::
 
 To support multiple servers, just add multiple servers::
 
-    from pybloom import BloomdClient
+    from pybloomd.pybloomd import BloomdClient
 
     # Create a client to a multiple bloomd servers, default ports
     client = BloomdClient(["bloomd1", "bloomd2"])
@@ -65,7 +65,7 @@ To support multiple servers, just add multiple servers::
 
 Using pipelining is straightforward as well::
 
-    from pybloom import BloomdClient
+    from pybloomd.pybloomd import BloomdClient
 
     # Create a client to a local bloomd server, default port
     client = BloomdClient(["localhost"])
